@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Report ScriptLanguage="CSharp" ReportInfo.Created="10/21/2020 11:20:20" ReportInfo.Modified="10/22/2020 17:17:20" ReportInfo.CreatorVersion="2020.4.5.0">
+<Report ScriptLanguage="CSharp" ReportInfo.Created="10/21/2020 11:20:20" ReportInfo.Modified="10/26/2020 15:32:42" ReportInfo.CreatorVersion="2020.4.4.0">
   <Dictionary>
     <BusinessObjectDataSource Name="Data" ReferenceName="Data" DataType="null" Enabled="true">
       <Column Name="BarcodeEAN" DataType="System.Int16"/>
@@ -10,14 +10,14 @@
       <Column Name="InventoryStore" DataType="System.String"/>
     </BusinessObjectDataSource>
   </Dictionary>
-  <ReportPage Name="Page1" RawPaperSize="9" FirstPageSource="15" OtherPagesSource="15" LastPageSource="15" Columns.Count="3" Columns.Width="70" Columns.Positions="0,63.3,126.7" Watermark.Font="Arial, 60pt">
-    <DataBand Name="Data1" Width="264.6" Height="96.01" DataSource="Data" Columns.MinRowCount="1">
-      <ContainerObject Name="Container1" Width="264.6" Height="86.56">
-        <BarcodeObject Name="Barcode" Left="85.05" Width="128.75" Height="47.25" DataColumn="Data.BarcodeEAN" Text="110101" ShowText="false" Barcode.CalcCheckSum="false"/>
-        <TextObject Name="ZoneNumber" Left="122.85" Top="56.7" Width="94.5" Height="18.9" Text="[Data.ZoneNumber]" Font="Arial, 10pt"/>
+  <ReportPage Name="Page1" RawPaperSize="9" LeftMargin="0" TopMargin="3" RightMargin="0" BottomMargin="3" FirstPageSource="15" OtherPagesSource="15" LastPageSource="15" Columns.Count="3" Columns.Width="70" Columns.Positions="0,70,140" Watermark.Font="Arial, 60pt">
+    <DataBand Name="Data1" Width="264.6" Height="99.79" DataSource="Data" Columns.MinRowCount="1">
+      <ContainerObject Name="Container1" Width="264.6" Height="99.79" Border.Lines="All">
+        <BarcodeObject Name="Barcode" Left="85.05" Top="9.45" Width="128.75" Height="37.8" DataColumn="Data.BarcodeEAN" Text="110101" ShowText="false" Barcode.CalcCheckSum="false"/>
+        <TextObject Name="ZoneNumber" Left="103.95" Top="56.7" Width="94.5" Height="18.9" Text="[Data.ZoneNumber]" Font="Arial, 14pt, style=Bold"/>
         <TextObject Name="InventoryDate" Left="9.45" Top="47.25" Width="94.5" Height="18.9" Text="[Data.InventoryDate]" Format="Date" Format.Format="d" Font="Arial, 10pt"/>
-        <TextObject Name="InventoryRoom" Left="9.45" Top="28.35" Width="56.7" Height="18.9" Text="[Data.InventoryRoom]" Font="Arial, 10pt"/>
-        <TextObject Name="InventoryCompany" Left="9.45" Top="9.45" Width="56.7" Height="18.9" Text="[Data.InventoryCompany]" Font="Arial, 10pt"/>
+        <TextObject Name="InventoryRoom" Left="9.45" Top="28.35" Width="66.15" Height="18.9" Text="[Data.InventoryRoom]" Font="Arial, 10pt"/>
+        <TextObject Name="InventoryCompany" Left="9.45" Top="9.45" Width="66.15" Height="18.9" Text="[Data.InventoryCompany]" Font="Arial, 10pt"/>
         <TextObject Name="InventoryStore" Left="9.45" Top="66.15" Width="94.5" Height="18.9" Text="[Data.InventoryStore]" Font="Arial, 10pt"/>
       </ContainerObject>
     </DataBand>

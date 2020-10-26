@@ -18,8 +18,8 @@ namespace Check.Reports.Framework
             string reportsFolder = Directory.GetCurrentDirectory();
 
             Report report = new Report();
-            report.Load(@"C:\Users\Aga\source\repos\GeneratorStref\Reports\FastReport_Barcode.frx");//Path.Combine(reportsFolder, $"Reports /{_report.ReportName}.frx"));
-            
+            report.Load(@"C:\Users\piter\source\repos\piterkos\GeneratorStref\Reports\FastReport_Barcode.frx");//Path.Combine(reportsFolder, $"Reports /{_report.ReportName}.frx"));//Path.Combine(reportsFolder, $"Reports /{_report.ReportName}.frx"));
+
             report.RegisterData(_report.Data, "Data");
 
             report.Prepare();

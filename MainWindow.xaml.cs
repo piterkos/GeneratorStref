@@ -26,11 +26,21 @@ namespace GeneratorStref
         public MainWindow()
         {
             InitializeComponent();
+            Dater.Text = DateTime.Today.ToShortDateString();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            BarcodeReport barcodeReport = new BarcodeReport();
+            int poczatkowaStrefa = Convert.ToInt32(PoczatekStref.Text);
+            int liczbaStrefDoDruku = Convert.ToInt32(Strefy.Text);
+            List<Strefa> listaStrefDoDruku = new List<Strefa>();
+            for (int i = poczatkowaStrefa; i < poczatkowaStrefa + liczbaStrefDoDruku ; i++)
+            {
+                
+                string strefa = ((i).ToString()).PadLeft(4, '0');
+                listaStrefDoDruku.Add(new Strefa("Check", Pomieszczenie.Text, Dater.SelectedDate.Value.ToShortDateString(),Filia.Text,prefix.Text+"-"+strefa, prefix.Text+strefa));
+            }
+            BarcodeReport barcodeReport = new BarcodeReport(listaStrefDoDruku);
             ReportService reportService = new ReportService(barcodeReport);
             reportService.OrderReport();
         }

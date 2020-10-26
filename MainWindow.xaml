@@ -5,9 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GeneratorStref"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="368,192,0,0" VerticalAlignment="Top" Click="Button_Click"/>
+        Title="Check - Generator stref" Height="293" Width="231">
 
-    </Grid>
+    <WrapPanel Orientation="Vertical" Margin="5" DataContext="200">
+
+        <StackPanel Orientation="Horizontal" Width="200" HorizontalAlignment="Left">
+            <Label Content="Pomieszczenie:" Width="{Binding ElementName=Dater, Path=Height}" HorizontalAlignment="Left" Margin="5"/>
+            <TextBox x:Name="Pomieszczenie" Text="Magazyn" TextAlignment="Center" Width="83" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Stretch" />
+        </StackPanel>
+        <DatePicker Name="Dater" Width="183" DisplayDate="2020-10-26" SelectedDateFormat="Short" HorizontalAlignment="Left" Margin="5"/>
+        <StackPanel Orientation="Horizontal" Width="200" HorizontalAlignment="Left">
+            <Label Content="Filia:" Width="90" HorizontalAlignment="Left" Margin="5"/>
+            <TextBox x:Name="Filia" Width="83
+                     " Text="LPP - House" TextAlignment="Left"  Margin="5" HorizontalAlignment="Right" VerticalAlignment="Stretch" FontStretch="Normal" TextWrapping="NoWrap" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Width="200" HorizontalAlignment="Left">
+            <Label Content="Prefiks:" Width="90" HorizontalAlignment="Center" Margin="5" Height="25" VerticalAlignment="Center"/>
+            <TextBox x:Name="prefix" Text="11" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" Width="200" HorizontalAlignment="Left">
+            <Label Content="Strefa początek:" Width="90" HorizontalAlignment="Center" Margin="5" Height="25" VerticalAlignment="Center"/>
+            <TextBox Name="PoczatekStref" Text="101" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" />
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <Label Content="Ilość stref:" Width="90" HorizontalAlignment="Center" Margin="5" Height="25" VerticalAlignment="Center"/>
+            <TextBox Name="Strefy" Text="50" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" />
+        </StackPanel>
+        <Button Content="Drukuj" Width ="188" Click="Button_Click" HorizontalAlignment="Left"/>
+    </WrapPanel>
 </Window>
