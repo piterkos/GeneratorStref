@@ -18,15 +18,15 @@ namespace Check.Reports.Framework
             string reportsFolder = Directory.GetCurrentDirectory();
 
             Report report = new Report();
-            report.Load(@"C:\Users\piter\source\repos\piterkos\GeneratorStref\Reports\FastReport_Barcode.frx");//Path.Combine(reportsFolder, $"Reports /{_report.ReportName}.frx"));//Path.Combine(reportsFolder, $"Reports /{_report.ReportName}.frx"));
-
+            report.Load(reportsFolder+@"\Reports\"+_report.ReportName+".frx");//Path.Combine(reportsFolder, $"Reports /{_report.ReportName}.frx"));
+            //@"C:\Users\piter\source\repos\piterkos\GeneratorStref\Reports\FastReport_Barcode.frx");
             report.RegisterData(_report.Data, "Data");
 
             report.Prepare();
 
             PDFSimpleExport pdfExport = new PDFSimpleExport();
 
-            pdfExport.Export(report, "Simple List.pdf");
+            pdfExport.Export(report, @"C:\Check\Raporty\StrefyDoDruku.pdf");
         }
     }
 }

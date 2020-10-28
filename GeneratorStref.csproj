@@ -7,8 +7,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Reports\Barcode.frx" />
+    <None Remove="Reports\StrefyDoDruku.frx" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="FastReport.OpenSource" Version="2020.4.5" />
     <PackageReference Include="FastReport.OpenSource.Export.PdfSimple" Version="2020.4.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Reports\Barcode.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Content Include="Reports\StrefyDoDruku.frx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Reports\BarcodeReport.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
 
 </Project>

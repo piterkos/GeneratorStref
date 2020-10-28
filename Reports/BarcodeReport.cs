@@ -8,7 +8,7 @@ namespace Check.Reports.Reports
 {
     public class BarcodeReport : IReport
     {
-        public string ReportName => "FastReport_Barcode";//"Barcode";
+        public string ReportName => "StrefyDoDruku";//"Barcode";
 
         public IEnumerable<object> Data { get; set; }
 

@@ -2,6 +2,8 @@
 using Check.Reports.Reports;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,6 +29,7 @@ namespace GeneratorStref
         {
             InitializeComponent();
             Dater.Text = DateTime.Today.ToShortDateString();
+            if(!Directory.Exists(@"C:\Check\Raporty")) Directory.CreateDirectory(@"C:\Check\Raporty");
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -43,6 +46,15 @@ namespace GeneratorStref
             BarcodeReport barcodeReport = new BarcodeReport(listaStrefDoDruku);
             ReportService reportService = new ReportService(barcodeReport);
             reportService.OrderReport();
+
+            Process p = new Process();
+            p.StartInfo = new ProcessStartInfo()
+            {
+                CreateNoWindow = true,
+                Verb = "print",
+                FileName = @"C:\Check\Raporty\StrefyDoDruku.pdf" //put the correct path here
+            };
+            p.Start();
         }
     }
 }
