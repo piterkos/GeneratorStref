@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Reports\Barcode.frx" />
     <None Remove="Reports\StrefyDoDruku.frx" />
   </ItemGroup>
 
@@ -17,16 +16,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="Reports\Barcode.frx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Content Include="Reports\StrefyDoDruku.frx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Reports\BarcodeReport.cs">
+    <Compile Update="Reports\StrefyDoDruku.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
   </ItemGroup>

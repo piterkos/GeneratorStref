@@ -43,18 +43,9 @@ namespace GeneratorStref
                 string strefa = ((i).ToString()).PadLeft(4, '0');
                 listaStrefDoDruku.Add(new Strefa("Check", Pomieszczenie.Text, Dater.SelectedDate.Value.ToShortDateString(),Filia.Text,prefix.Text+"-"+strefa, prefix.Text+strefa));
             }
-            BarcodeReport barcodeReport = new BarcodeReport(listaStrefDoDruku);
+            StrefyDoDruku barcodeReport = new StrefyDoDruku(listaStrefDoDruku);
             ReportService reportService = new ReportService(barcodeReport);
             reportService.OrderReport();
-
-            Process p = new Process();
-            p.StartInfo = new ProcessStartInfo()
-            {
-                CreateNoWindow = true,
-                Verb = "print",
-                FileName = @"C:\Check\Raporty\StrefyDoDruku.pdf" //put the correct path here
-            };
-            p.Start();
         }
     }
 }
