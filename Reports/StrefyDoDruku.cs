@@ -11,10 +11,16 @@ namespace Check.Reports.Reports
         public string ReportName => "StrefyDoDruku";
 
         public IEnumerable<object> Data { get; set; }
+        public Dictionary<string, object> Parameters { get ; set; }
 
         public StrefyDoDruku(IEnumerable<object> data)
         {
             Data = data;
+        }
+
+        public void PrepareDataReport()
+        {
+            
         }
     }
 }

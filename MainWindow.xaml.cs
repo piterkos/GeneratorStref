@@ -31,7 +31,7 @@ namespace GeneratorStref
             Dater.Text = DateTime.Today.ToShortDateString();
             if(!Directory.Exists(@"C:\Check\Raporty")) Directory.CreateDirectory(@"C:\Check\Raporty");
         }
-
+        public ExportMethod exportMetod = ExportMethod.Print;
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             int poczatkowaStrefa = Convert.ToInt32(PoczatekStref.Text);
@@ -44,8 +44,8 @@ namespace GeneratorStref
                 listaStrefDoDruku.Add(new Strefa("Check", Pomieszczenie.Text, Dater.SelectedDate.Value.ToShortDateString(),Filia.Text,prefix.Text+"-"+strefa, prefix.Text+strefa));
             }
             StrefyDoDruku barcodeReport = new StrefyDoDruku(listaStrefDoDruku);
-            ReportService reportService = new ReportService(barcodeReport);
-            reportService.OrderReport();
+            ReportService reportService = new ReportService();
+            reportService.OrderReport(barcodeReport, exportMetod);
         }
     }
 }

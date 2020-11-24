@@ -2,6 +2,6 @@
 {
     public interface IReportService
     {
-        void OrderReport();
+        void OrderReport(IReport report, ExportMethod exportMethod);
     }
 }

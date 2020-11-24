@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
     <SignAssembly>true</SignAssembly>
+    <StartupObject>GeneratorStref.App</StartupObject>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -18,6 +19,7 @@
   <ItemGroup>
     <PackageReference Include="FastReport.OpenSource" Version="2020.4.5" />
     <PackageReference Include="FastReport.OpenSource.Export.PdfSimple" Version="2020.4.5" />
+    <PackageReference Include="PdfSharp" Version="1.50.5147" />
   </ItemGroup>
 
   <ItemGroup>
