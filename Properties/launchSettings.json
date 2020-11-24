@@ -1,7 +1,7 @@
 {
   "profiles": {
     "GeneratorStref": {
-      "commandName": "Executable"
+      "commandName": "Project"
     }
   }
 }

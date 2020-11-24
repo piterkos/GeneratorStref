@@ -34,4 +34,10 @@
     </Compile>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Historia.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

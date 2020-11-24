@@ -11,7 +11,7 @@ namespace Check.Reports.Reports
         public string ReportName => "StrefyDoDruku";
 
         public IEnumerable<object> Data { get; set; }
-        public Dictionary<string, object> Parameters { get ; set; }
+        public Dictionary<string, object> Parameters { get; set; } = new Dictionary<string, object>();
 
         public StrefyDoDruku(IEnumerable<object> data)
         {
@@ -20,7 +20,7 @@ namespace Check.Reports.Reports
 
         public void PrepareDataReport()
         {
-            
+           
         }
     }
 }

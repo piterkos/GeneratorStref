@@ -5,32 +5,107 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GeneratorStref"
         mc:Ignorable="d"
-        Title="Check - Generator stref" Height="293" Width="231">
+        Title="Check - Generator stref" Height="481" Width="714">
 
-    <WrapPanel Orientation="Vertical" Margin="5" DataContext="200">
-
-        <StackPanel Orientation="Horizontal" Width="200" HorizontalAlignment="Left">
-            <Label Content="Pomieszczenie:" Width="{Binding ElementName=Dater, Path=Height}" HorizontalAlignment="Left" Margin="5"/>
-            <TextBox x:Name="Pomieszczenie" Text="Magazyn" TextAlignment="Center" Width="83" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Stretch" />
-        </StackPanel>
-        <DatePicker Name="Dater" Width="183" DisplayDate="2020-10-26" SelectedDateFormat="Short" HorizontalAlignment="Left" Margin="5"/>
-        <StackPanel Orientation="Horizontal" Width="200" HorizontalAlignment="Left">
+    <WrapPanel Orientation="Vertical" Margin="5" DataContext="200">        
+        
+        <StackPanel Orientation="Horizontal" Width="Auto" HorizontalAlignment="Left">
+            <DatePicker Name="Dater" Width="183" DisplayDate="2020-10-26" SelectedDateFormat="Short" HorizontalAlignment="Left" Margin="5"/>
             <Label Content="Filia:" Width="90" HorizontalAlignment="Left" Margin="5"/>
             <TextBox x:Name="Filia" Width="83
-                     " Text="LPP - House" TextAlignment="Left"  Margin="5" HorizontalAlignment="Right" VerticalAlignment="Stretch" FontStretch="Normal" TextWrapping="NoWrap" />
+                     " Text="Sinsay" TextAlignment="Left"  Margin="5" HorizontalAlignment="Right" VerticalAlignment="Stretch" FontStretch="Normal" TextWrapping="NoWrap" />
+            <Button x:Name="Reset" Content="Reset" Width="80" Margin="5" Click="Reset_Click"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Width="200" HorizontalAlignment="Left">
-            <Label Content="Prefiks:" Width="90" HorizontalAlignment="Center" Margin="5" Height="25" VerticalAlignment="Center"/>
-            <TextBox x:Name="prefix" Text="11" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" Width="200" HorizontalAlignment="Left">
-            <Label Content="Strefa początek:" Width="90" HorizontalAlignment="Center" Margin="5" Height="25" VerticalAlignment="Center"/>
-            <TextBox Name="PoczatekStref" Text="101" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" />
-        </StackPanel>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-            <Label Content="Ilość stref:" Width="90" HorizontalAlignment="Center" Margin="5" Height="25" VerticalAlignment="Center"/>
-            <TextBox Name="Strefy" Text="50" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" />
-        </StackPanel>
-        <Button Content="Drukuj" Width ="188" Click="Button_Click" HorizontalAlignment="Left"/>
+        <Grid >
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="35"/>
+            </Grid.RowDefinitions>
+
+            <Label Content="PREFIX" Width="80" HorizontalAlignment="Center" Margin="5" Height="25" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"/>
+            <Label Content="POMIESZCZENIE" HorizontalAlignment="Center" Margin="5" Height="25" VerticalAlignment="Center" Grid.Row="0" Grid.Column="1"/>
+            <Label Content="POCZĄTEK" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" Grid.Row="0" Grid.Column="2"/>
+            <Label Content="ILOŚĆ STREF" Width="80" HorizontalAlignment="Center" Margin="5" Height="25" VerticalAlignment="Center" Grid.Row="0" Grid.Column="3"/>
+            <Label Content="OSTATNIA" Width="80" HorizontalAlignment="Center" Margin="5" Height="25" VerticalAlignment="Center" Grid.Row="0" Grid.Column="4"/>
+
+            <Label Content="11" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
+            <TextBox x:Name="P11_Nazwa" Text="Salon" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="1" Grid.Column="1"/>
+            <TextBox x:Name="P11_StrefaPoczatek" Text="1" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="1" Grid.Column="2" />
+            <TextBox x:Name="P11_IloscStref" Text="33" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="1" Grid.Column="3" />
+            <TextBox x:Name="P11_Wydrukowano" IsEnabled="False" Text="0" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="1" Grid.Column="4" />
+            <Button x:Name="P_11" Content="Drukuj"  Margin="5" Grid.Row="1" Grid.Column="5" Click="P_11_Click"/>
+
+            <Label Content="22" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0"/>
+            <TextBox x:Name="P22_Nazwa" Text="Women" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="2" Grid.Column="1"/>
+            <TextBox x:Name="P22_StrefaPoczatek" Text="1" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="2" Grid.Column="2" />
+            <TextBox x:Name="P22_IloscStref" Text="33" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="2" Grid.Column="3" />
+            <TextBox x:Name="P22_Wydrukowano" IsEnabled="False" Text="0" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="2" Grid.Column="4" />
+            <Button x:Name="P_22" Content="Drukuj"  Margin="5" Grid.Row="2" Grid.Column="5" Click="P_22_Click"/>
+
+            <Label Content="33" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" Grid.Row="3" Grid.Column="0"/>
+            <TextBox x:Name="P33_Nazwa" Text="Men" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="3" Grid.Column="1"/>
+            <TextBox x:Name="P33_StrefaPoczatek" Text="1" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="3" Grid.Column="2" />
+            <TextBox x:Name="P33_IloscStref" Text="33" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="3" Grid.Column="3" />
+            <TextBox x:Name="P33_Wydrukowano" IsEnabled="False" Text="0" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="3" Grid.Column="4" />
+            <Button x:Name="P_33" Content="Drukuj"  Margin="5" Grid.Row="3" Grid.Column="5" Click="P_33_Click"/>
+
+            <Label Content="44" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" Grid.Row="4" Grid.Column="0"/>
+            <TextBox x:Name="P44_Nazwa" Text="ACC" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="4" Grid.Column="1"/>
+            <TextBox x:Name="P44_StrefaPoczatek" Text="1" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="4" Grid.Column="2" />
+            <TextBox x:Name="P44_IloscStref" Text="33" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="4" Grid.Column="3" />
+            <TextBox x:Name="P44_Wydrukowano" IsEnabled="False" Text="0" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="4" Grid.Column="4" />
+            <Button x:Name="P_44" Content="Drukuj"  Margin="5" Grid.Row="4" Grid.Column="5" Click="P_44_Click"/>
+
+            <Label Content="55" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" Grid.Row="5" Grid.Column="0"/>
+            <TextBox x:Name="P55_Nazwa" Text="ACC" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="5" Grid.Column="1"/>
+            <TextBox x:Name="P55_StrefaPoczatek" Text="1" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="5" Grid.Column="2" />
+            <TextBox x:Name="P55_IloscStref" Text="33" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="5" Grid.Column="3" />
+            <TextBox x:Name="P55_Wydrukowano" IsEnabled="False" Text="0" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="5" Grid.Column="4" />
+            <Button x:Name="P_55" Content="Drukuj"  Margin="5" Grid.Row="5" Grid.Column="5" Click="P_55_Click"/>
+
+            <Label Content="66" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" Grid.Row="6" Grid.Column="0"/>
+            <TextBox x:Name="P66_Nazwa" Text="" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="6" Grid.Column="1"/>
+            <TextBox x:Name="P66_StrefaPoczatek" Text="1" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="6" Grid.Column="2" />
+            <TextBox x:Name="P66_IloscStref" Text="33" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="6" Grid.Column="3" />
+            <TextBox x:Name="P66_Wydrukowano" IsEnabled="False" Text="0" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="6" Grid.Column="4" />
+            <Button x:Name="P_66" Content="Drukuj"  Margin="5" Grid.Row="6" Grid.Column="5" Click="P_66_Click"/>
+
+            <Label Content="77" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" Grid.Row="7" Grid.Column="0"/>
+            <TextBox x:Name="P77_Nazwa" Text="Magazyn 2" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="7" Grid.Column="1"/>
+            <TextBox x:Name="P77_StrefaPoczatek" Text="1" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="7" Grid.Column="2" />
+            <TextBox x:Name="P77_IloscStref" Text="33" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="7" Grid.Column="3" />
+            <TextBox x:Name="P77_Wydrukowano" IsEnabled="False" Text="0" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="7" Grid.Column="4" />
+            <Button x:Name="P_77" Content="Drukuj"  Margin="5" Grid.Row="7" Grid.Column="5" Click="P_77_Click"/>
+
+            <Label Content="88" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" Grid.Row="8" Grid.Column="0"/>
+            <TextBox x:Name="P88_Nazwa" Text="Boxy" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="8" Grid.Column="1"/>
+            <TextBox x:Name="P88_StrefaPoczatek" Text="1" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="8" Grid.Column="2" />
+            <TextBox x:Name="P88_IloscStref" Text="33" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="8" Grid.Column="3" />
+            <TextBox x:Name="P88_Wydrukowano" IsEnabled="False" Text="0" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="8" Grid.Column="4" />
+            <Button x:Name="P_88" Content="Drukuj"  Margin="5" Grid.Row="8" Grid.Column="5" Click="P_88_Click"/>
+
+            <Label Content="99" HorizontalAlignment="Center" Margin="5" VerticalAlignment="Center" Grid.Row="9" Grid.Column="0"/>
+            <TextBox x:Name="P99_Nazwa" Text="Magazyn" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="9" Grid.Column="1"/>
+            <TextBox x:Name="P99_StrefaPoczatek" Text="1" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="9" Grid.Column="2" />
+            <TextBox x:Name="P99_IloscStref" Text="33" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="9" Grid.Column="3" />
+            <TextBox x:Name="P99_Wydrukowano" IsEnabled="False" Text="0" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="9" Grid.Column="4" />
+            <Button x:Name="P_99" Content="Drukuj"  Margin="5" Grid.Row="9" Grid.Column="5" Click="P_99_Click"/>
+        </Grid>
     </WrapPanel>
 </Window>

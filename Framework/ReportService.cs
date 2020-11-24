@@ -26,7 +26,7 @@ namespace Check.Reports.Framework
 
             Report report = new Report();
 
-            report.Load(Path.Combine(reportsFolder, $"Reports Template/{checkReport.ReportName}.frx"));
+            report.Load(Path.Combine(reportsFolder, $"Reports/{checkReport.ReportName}.frx"));
 
             if (checkReport.Parameters.Count > 0)
             {
