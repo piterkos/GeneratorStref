@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GeneratorStref"
         mc:Ignorable="d"
-        Title="Check - Generator stref" Height="481" Width="714">
+        Title="Check - Generator stref v2.0" Height="481" Width="714">
 
     <WrapPanel Orientation="Vertical" Margin="5" DataContext="200">        
         
