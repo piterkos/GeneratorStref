@@ -71,7 +71,7 @@ namespace Check.Reports.Framework
                 case ExportMethod.Print:
                     for (int i = 0; i < totalPages; i++)
                     {
-                        report.Export(new ImageExport() { Resolution = 120, ImageFormat = ImageExportFormat.Tiff, PageRange = PageRange.Current, CurPage = i + 1 }, ms);
+                        report.Export(new ImageExport() { Resolution = 300, ImageFormat = ImageExportFormat.Jpeg, PageRange = PageRange.Current, CurPage = i + 1 }, ms);
                         //TODO probably there should be functionality to send multiple images to helper (or test line above without current page)
                         RawPrinterHelper.SendByteToPrinter(ms.ToArray());
                         ms.SetLength(0);
