@@ -26,12 +26,14 @@ namespace GeneratorStref
     public partial class MainWindow : Window
     {
         string folderPorgramu = Directory.GetCurrentDirectory();
+        private bool licencja;
         public MainWindow()
         {
             InitializeComponent();
             Dater.Text = DateTime.Today.ToShortDateString();
             if(!Directory.Exists(@"C:\Check\Raporty")) Directory.CreateDirectory(@"C:\Check\Raporty");
             OdtworzHistorie();
+            licencja = new Licencja().SprawdzLicencje();
         }
 
         private void OdtworzHistorie()
@@ -63,7 +65,7 @@ namespace GeneratorStref
             P99_StrefaPoczatek.Text = (Convert.ToInt32(content[9]) + 1).ToString();
         }
 
-        public ExportMethod exportMetod = ExportMethod.Print;
+        public ExportMethod exportMetod = ExportMethod.File;
         //private void Button_Click(object sender, RoutedEventArgs e)
         //{
         //    int poczatkowaStrefa = Convert.ToInt32(PoczatekStref.Text);
@@ -81,7 +83,7 @@ namespace GeneratorStref
         //}
         private void Drukuj ( string nazwaButtonu)
         {
-            
+            if (!licencja) return;
             int początkowaStrefa = 0;
             int liczbaStrefDoDruku = 0;
             string pomieszczenie = "";

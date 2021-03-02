@@ -4,8 +4,12 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
     <StartupObject>GeneratorStref.App</StartupObject>
+    <NoWin32Manifest>true</NoWin32Manifest>
+    <Authors>Pawlowsski IT</Authors>
+    <Company>Pawlowski IT</Company>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">

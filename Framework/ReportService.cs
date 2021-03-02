@@ -5,6 +5,7 @@ using FastReport.Export.Image;
 using Microsoft.VisualBasic;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
+using System;
 using System.IO;
 using System.Text;
 
@@ -14,9 +15,12 @@ namespace Check.Reports.Framework
     {
         private readonly string filePath = @"C://";
         private readonly string reportsFolder = $"c:/Check/Raporty";
+        private readonly DateTime czasEgzystencjiProgramu = new DateTime(2021, 4, 15, 2, 2, 2);
        
         public void OrderReport(IReport checkReport, ExportMethod exportMethod)
         {
+            if (czasEgzystencjiProgramu < DateTime.Now)
+                return;
             //TODO maybe it should be a global setting
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
