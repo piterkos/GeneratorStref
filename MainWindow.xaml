@@ -5,10 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GeneratorStref"
         mc:Ignorable="d"
-        Title="Check - Generator stref v2.0" Height="481" Width="714">
+        Title="Generator stref v2.0 - Powered By Pawłowski IT" Height="481" Width="714">
 
-    <WrapPanel Orientation="Vertical" Margin="5" DataContext="200">        
-        
+    <WrapPanel Orientation="Vertical" Margin="5" DataContext="200">
         <StackPanel Orientation="Horizontal" Width="Auto" HorizontalAlignment="Left">
             <DatePicker Name="Dater" Width="183" DisplayDate="2020-10-26" SelectedDateFormat="Short" HorizontalAlignment="Left" Margin="5"/>
             <Label Content="Filia:" Width="90" HorizontalAlignment="Left" Margin="5"/>
@@ -18,6 +17,7 @@
         </StackPanel>
         <Grid >
             <Grid.ColumnDefinitions >
+                <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -107,5 +107,11 @@
             <TextBox x:Name="P99_Wydrukowano" IsEnabled="False" Text="0" TextAlignment="Center" Margin="5" Width="83" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Grid.Row="9" Grid.Column="4" />
             <Button x:Name="P_99" Content="Drukuj"  Margin="5" Grid.Row="9" Grid.Column="5" Click="P_99_Click"/>
         </Grid>
+        <DockPanel FlowDirection="RightToLeft" VerticalAlignment="Bottom">
+            <TextBlock DockPanel.Dock="Bottom" VerticalAlignment="Bottom" Margin="0,30,0,0">
+            "Powered By Pawłowski IT" <LineBreak/>
+            Kontakt: piterpaw@gmail.com
+            </TextBlock>
+        </DockPanel>        
     </WrapPanel>
 </Window>

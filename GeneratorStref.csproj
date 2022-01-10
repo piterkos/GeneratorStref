@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0-windows</TargetFramework>
     <UseWPF>true</UseWPF>
     <SignAssembly>false</SignAssembly>
     <StartupObject>GeneratorStref.App</StartupObject>
-    <NoWin32Manifest>true</NoWin32Manifest>
     <Authors>Pawlowsski IT</Authors>
     <Company>Pawlowski IT</Company>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <ApplicationIcon>ikona 256 x 256.ico</ApplicationIcon>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -17,19 +17,32 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Licencja\**" />
+    <EmbeddedResource Remove="Licencja\**" />
+    <None Remove="Licencja\**" />
+    <Page Remove="Licencja\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Historia.txt" />
     <None Remove="Reports\StrefyDoDruku.frx" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Historia.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Reports\StrefyDoDruku.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FastReport.OpenSource" Version="2020.4.5" />
     <PackageReference Include="FastReport.OpenSource.Export.PdfSimple" Version="2020.4.5" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
     <PackageReference Include="PdfSharp" Version="1.50.5147" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Reports\StrefyDoDruku.frx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
   </ItemGroup>
 
   <ItemGroup>
@@ -39,9 +52,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Historia.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Reports\StrefyDoDrukuHY.frx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Strefy dla innych\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="C:\Users\Piotr\source\repos\Check\Check.Security\Check.Security.csproj" />
   </ItemGroup>
 
 </Project>

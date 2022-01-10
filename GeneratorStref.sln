@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30523.141
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeneratorStref", "GeneratorStref.csproj", "{C9C6BC90-ED91-4C49-8A57-9C9B5BD73BCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GeneratorStref", "GeneratorStref.csproj", "{C9C6BC90-ED91-4C49-8A57-9C9B5BD73BCF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Check.Security", "C:\Users\Piotr\source\repos\Check\Check.Security\Check.Security.csproj", "{B40DFA67-BA0B-44B0-9F6A-2B68AB3AD97D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{C9C6BC90-ED91-4C49-8A57-9C9B5BD73BCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9C6BC90-ED91-4C49-8A57-9C9B5BD73BCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9C6BC90-ED91-4C49-8A57-9C9B5BD73BCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B40DFA67-BA0B-44B0-9F6A-2B68AB3AD97D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B40DFA67-BA0B-44B0-9F6A-2B68AB3AD97D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B40DFA67-BA0B-44B0-9F6A-2B68AB3AD97D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B40DFA67-BA0B-44B0-9F6A-2B68AB3AD97D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

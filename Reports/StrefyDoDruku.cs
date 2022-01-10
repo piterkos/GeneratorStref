@@ -1,8 +1,5 @@
-﻿//using Check.Model;
-using Check.Reports.Framework;
-using GeneratorStref;
+﻿using Check.Reports.Framework;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Check.Reports.Reports
 {

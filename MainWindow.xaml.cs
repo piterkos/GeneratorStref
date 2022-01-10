@@ -1,21 +1,10 @@
 ﻿using Check.Reports.Framework;
 using Check.Reports.Reports;
+using Check.Security;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-//using System.Windows.Shapes;
 
 
 namespace GeneratorStref
@@ -26,14 +15,16 @@ namespace GeneratorStref
     public partial class MainWindow : Window
     {
         string folderPorgramu = Directory.GetCurrentDirectory();
-        private bool licencja;
-        public MainWindow()
+
+        private readonly ILicencja _licencja;
+
+        public MainWindow(ILicencja licencja)
         {
             InitializeComponent();
             Dater.Text = DateTime.Today.ToShortDateString();
             if(!Directory.Exists(@"C:\Check\Raporty")) Directory.CreateDirectory(@"C:\Check\Raporty");
             OdtworzHistorie();
-            licencja = new Licencja().SprawdzLicencje();
+            _licencja = licencja;
         }
 
         private void OdtworzHistorie()
@@ -65,25 +56,11 @@ namespace GeneratorStref
             P99_StrefaPoczatek.Text = (Convert.ToInt32(content[9]) + 1).ToString();
         }
 
-        public ExportMethod exportMetod = ExportMethod.File;
-        //private void Button_Click(object sender, RoutedEventArgs e)
-        //{
-        //    int poczatkowaStrefa = Convert.ToInt32(PoczatekStref.Text);
-        //    int liczbaStrefDoDruku = Convert.ToInt32(Strefy.Text);
-        //    List<Strefa> listaStrefDoDruku = new List<Strefa>();
-        //    for (int i = poczatkowaStrefa; i < poczatkowaStrefa + liczbaStrefDoDruku ; i++)
-        //    {
-                
-        //        string strefa = ((i).ToString()).PadLeft(4, '0');
-        //        listaStrefDoDruku.Add(new Strefa("Check", Pomieszczenie.Text, Dater.SelectedDate.Value.ToShortDateString(),Filia.Text,prefix.Text+"-"+strefa, prefix.Text+strefa));
-        //    }
-        //    StrefyDoDruku barcodeReport = new StrefyDoDruku(listaStrefDoDruku);
-        //    ReportService reportService = new ReportService();
-        //    reportService.OrderReport(barcodeReport, exportMetod);
-        //}
+        public ExportMethod exportMetod = ExportMethod.Print;
+
         private void Drukuj ( string nazwaButtonu)
         {
-            if (!licencja) return;
+            if (!_licencja.CheckLicence()) return;
             int początkowaStrefa = 0;
             int liczbaStrefDoDruku = 0;
             string pomieszczenie = "";

@@ -1,7 +1,5 @@
-﻿//using Check.Core.Settings;
-using FastReport;
+﻿using FastReport;
 using FastReport.Export.Image;
-//using Microsoft.Extensions.Options;
 using Microsoft.VisualBasic;
 using PdfSharp.Drawing;
 using PdfSharp.Pdf;
@@ -13,14 +11,11 @@ namespace Check.Reports.Framework
 {
     public class ReportService : IReportService
     {
-        private readonly string filePath = @"C://";
-        private readonly string reportsFolder = $"c:/Check/Raporty";
-        private readonly DateTime czasEgzystencjiProgramu = new DateTime(2021, 4, 15, 2, 2, 2);
+        private readonly string outputReportsFolder = $"c:/Check/Raporty";
        
         public void OrderReport(IReport checkReport, ExportMethod exportMethod)
         {
-            if (czasEgzystencjiProgramu < DateTime.Now)
-                return;
+
             //TODO maybe it should be a global setting
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
@@ -61,7 +56,7 @@ namespace Check.Reports.Framework
                     string dateToReportFileName = "_" + DateAndTime.Now.ToShortDateString() + "_" + DateAndTime.Now.Hour.ToString() + DateAndTime.Now.Minute.ToString() + DateAndTime.Now.Second.ToString();
                     for (int i = 0; i < totalPages; i++)
                     {
-                        report.Export(new ImageExport() { Resolution = 120, ImageFormat = ImageExportFormat.Tiff, PageRange = PageRange.Current, CurPage = i + 1 }, ms);
+                        report.Export(new ImageExport() { Resolution = 160, ImageFormat = ImageExportFormat.Tiff, PageRange = PageRange.Current, CurPage = i + 1 }, ms);
                         doc.Pages.Add(new PdfPage());
                         XGraphics xgr = XGraphics.FromPdfPage(doc.Pages[i]);
                         XImage img = XImage.FromStream(ms);
@@ -69,7 +64,7 @@ namespace Check.Reports.Framework
                         ms.SetLength(0);
                     }
 
-                    doc.Save(Path.Combine(reportsFolder, checkReport.ReportName + dateToReportFileName + ".pdf"));
+                    doc.Save(Path.Combine(outputReportsFolder, checkReport.ReportName + dateToReportFileName + ".pdf"));
                     doc.Close();
                     break;
                 case ExportMethod.Print:
